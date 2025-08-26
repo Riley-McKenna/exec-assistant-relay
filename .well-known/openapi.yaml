@@ -1,8 +1,8 @@
-openapi: 3.1.1
+openapi: "3.1.1"
 info:
   title: Exec Assistant Relay
   description: Relay API for reading and writing to Exec Assistant Memory in Google Sheets.
-  version: "1.0"
+  version: "1.0.0"
 servers:
   - url: https://exec-assistant-relay.onrender.com
 paths:
@@ -16,14 +16,20 @@ paths:
           application/json:
             schema:
               type: object
+              required:
+                - action
+                - data
               properties:
                 action:
                   type: string
-                  enum: [profile_write, task_add, task_update, log]
+                  enum:
+                    - profile_write
+                    - task_add
+                    - task_update
+                    - log
                 data:
                   type: object
                   additionalProperties: true
-              required: [action, data]
       responses:
         "200":
           description: Successful response
@@ -37,3 +43,4 @@ paths:
                   id:
                     type: string
                     nullable: true
+
