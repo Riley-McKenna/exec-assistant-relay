@@ -1,0 +1,19 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Exec Assistant Relay",
+  "name_for_model": "exec_assistant_relay",
+  "description_for_human": "Write and read tasks, logs, and profile data to Google Sheets memory.",
+  "description_for_model": "Use this tool to add, update, and log tasks or profile data in Exec Assistant Memory.",
+  "auth": {
+    "type": "bearer",
+    "authorization_type": "Bearer",
+    "verification_tokens": {}
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://exec-assistant-relay.onrender.com/.well-known/openapi.yaml"
+  },
+  "logo_url": "https://exec-assistant-relay.onrender.com/logo.png",
+  "contact_email": "your@email.com",
+  "legal_info_url": "https://yourdomain.com/legal"
+}
