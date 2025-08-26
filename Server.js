@@ -9,6 +9,9 @@ const TOKEN = process.env.TOKEN;
 
 app.use(express.json());
 
+// 👉 NEW: serve .well-known folder for plugin + OpenAPI spec
+app.use('/.well-known', express.static('.well-known'));
+
 app.post("/", async (req, res) => {
   try {
     const response = await fetch(GOOGLE_SCRIPT_URL, {
